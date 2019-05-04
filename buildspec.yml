@@ -6,10 +6,10 @@ phases:
       - pip install --upgrade awscli
   pre_build:
     commands:
-      - mvn clean compile
+      - mvn clean compile test
   build:
     commands:
-      - mvn install
+      - mvn war:exploded
   post_build:
     commands:
       - cp -r .ebextensions/ target/ROOT/

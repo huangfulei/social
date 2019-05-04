@@ -8,6 +8,9 @@ public class TestController {
 
     @RequestMapping("/user")
     public String getUsers(){
+
+        String endpoint = System.getProperty("API_ENDPOINT");
+        System.out.println("endpoint is: "+endpoint);
         return "this is fulei";
     }
 }
