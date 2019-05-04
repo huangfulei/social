@@ -21,16 +21,13 @@ public class ApplicationConfig {
     /**
      * Retrieved from properties file.
      */
-    @Value("${HelloWorld.SiteName}")
-    private String siteName;
-
-    @Bean
+/*    @Bean
     public HelloWorldController helloWorld() {
-        return new HelloWorldController(this.siteName);
+        return new HelloWorldController();
     }
 
     @Bean
-    public TestController getUsers(){ return new TestController();}
+    public TestController getUsers(){ return new TestController();}*/
 
     /**
      * Required to inject properties using the 'Value' annotation.
