@@ -22,10 +22,29 @@ public class UserController extends BaseController{
         return new ResponseEntity<User>(this.user, httpHeaders, HttpStatus.OK);
     } */
 
-    @GetMapping("/getUser")
+    @RequestMapping("/getUser")
     public User getUser(@RequestParam(value = "email") String email) {
         System.out.println("singleton user email is: " + email);
         return userService.getUserByEmail(email);
+    }
+
+    @GetMapping("test")
+    public String test(){
+        return "Test";
+    }
+
+    @GetMapping("/test1")
+    public String test1(){
+        return "test1";
+    }
+    @RequestMapping("test2")
+    public String test2(){
+        return "Test2";
+    }
+
+    @RequestMapping("/test3")
+    public String test3(){
+        return "test3";
     }
 
     @PostMapping("/saveNewUser")
