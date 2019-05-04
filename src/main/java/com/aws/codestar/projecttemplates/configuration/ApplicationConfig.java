@@ -1,5 +1,6 @@
 package com.aws.codestar.projecttemplates.configuration;
 
+import com.aws.codestar.projecttemplates.controller.TestController;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -27,6 +28,9 @@ public class ApplicationConfig {
     public HelloWorldController helloWorld() {
         return new HelloWorldController(this.siteName);
     }
+
+    @Bean
+    public TestController getUsers(){ return new TestController();}
 
     /**
      * Required to inject properties using the 'Value' annotation.
