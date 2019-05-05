@@ -1,3 +1,4 @@
+/*
 package com.aws.codestar.projecttemplates.model;
 
 import javax.persistence.*;
@@ -118,3 +119,4 @@ public class Post {
         this.numberOfViews = numberOfViews;
     }
 }
+*/
