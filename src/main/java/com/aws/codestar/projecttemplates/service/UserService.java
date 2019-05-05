@@ -1,4 +1,3 @@
-/*
 package com.aws.codestar.projecttemplates.service;
 
 import com.aws.codestar.projecttemplates.DAO.UserDao;
@@ -76,4 +75,3 @@ public class UserService {
         return userDao.findByEmail(email);
     }
 }
-*/
