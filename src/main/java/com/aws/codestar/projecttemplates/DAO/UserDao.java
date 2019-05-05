@@ -1,3 +1,4 @@
+/*
 package com.aws.codestar.projecttemplates.DAO;
 
 import com.aws.codestar.projecttemplates.model.User;
@@ -10,3 +11,4 @@ public interface UserDao extends CrudRepository<User, Integer> {
 
     User findByName(String name);
 }
+*/
