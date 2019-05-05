@@ -1,4 +1,3 @@
-/*
 package com.aws.codestar.projecttemplates.controller;
 
 import com.aws.codestar.projecttemplates.model.User;
@@ -14,7 +13,6 @@ public class UserController extends BaseController{
     @Autowired
     private UserService userService;
 
-*/
 /*    @GetMapping("/getUser")
     public ResponseEntity<User> getUser() {
         System.out.println("singleton user email is: " + user.getEmail());
@@ -22,8 +20,7 @@ public class UserController extends BaseController{
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.set("test", "testvalue");
         return new ResponseEntity<User>(this.user, httpHeaders, HttpStatus.OK);
-    } *//*
-
+    } */
 
     @RequestMapping("/getUser")
     public User getUser(@RequestParam(value = "email") String email) {
@@ -73,4 +70,3 @@ public class UserController extends BaseController{
     }
 
 }
-*/

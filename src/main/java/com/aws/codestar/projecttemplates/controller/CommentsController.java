@@ -1,4 +1,3 @@
-/*
 package com.aws.codestar.projecttemplates.controller;
 
 import com.aws.codestar.projecttemplates.model.Comment;
@@ -37,4 +36,3 @@ public class CommentsController {
     }
 
 }
-*/

@@ -1,4 +1,3 @@
-/*
 package com.aws.codestar.projecttemplates.model;
 
 import org.springframework.context.annotation.Scope;
@@ -147,4 +146,3 @@ public class User implements Serializable {
     }
 
 }
-*/
