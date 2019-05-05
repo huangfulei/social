@@ -1,4 +1,3 @@
-/*
 package com.aws.codestar.projecttemplates.model;
 
 import javax.persistence.*;
@@ -91,4 +90,3 @@ public class Comment {
         this.postID = postID;
     }
 }
-*/

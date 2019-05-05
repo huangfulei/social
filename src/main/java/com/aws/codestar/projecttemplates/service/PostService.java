@@ -1,4 +1,3 @@
-/*
 package com.aws.codestar.projecttemplates.service;
 
 import com.aws.codestar.projecttemplates.DAO.PostDao;
@@ -70,4 +69,3 @@ public class PostService {
         System.out.println("number of updated: "+ postDao.updateTotalNumberOfLikes(numberOfLikes, postID));
     }
 }
-*/

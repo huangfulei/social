@@ -1,4 +1,3 @@
-/*
 package com.aws.codestar.projecttemplates.DAO;
 
 import com.aws.codestar.projecttemplates.model.Post;
@@ -28,4 +27,3 @@ public interface PostDao extends CrudRepository<Post, Integer> {
     @Query(value = "update Post u set u.numberOfLikes =:numberOfLikes where u.id =:id")
     int updateTotalNumberOfLikes(@Param("numberOfLikes") Integer numberOfLikes, @Param("id") Integer postID);
 }
-*/
