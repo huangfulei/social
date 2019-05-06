@@ -1,3 +1,4 @@
+/*
 package com.aws.codestar.projecttemplates.controller;
 
 import com.aws.codestar.projecttemplates.model.Post;
@@ -23,11 +24,13 @@ public class PostController extends BaseController {
 
     private static final Logger LOGGER = LogManager.getLogger(PostController.class);
 
-    /**
+    */
+/**
      * get all example
      *
      * @return
-     */
+     *//*
+
     @GetMapping("/getRecommendedPosts/{size}/{index}")
     public Iterable<Post> getRecommendedPosts(@PathVariable(value = "size") Integer size,
                                               @PathVariable(value = "index") Integer index) {
@@ -42,23 +45,27 @@ public class PostController extends BaseController {
         return postService.getTotalNumberOfPosts();
     }
 
-    /**
+    */
+/**
      * get post by id with build in query
      *
      * @param id
      * @return
-     */
+     *//*
+
     @GetMapping("/getPost/{id}")
     public Optional<Post> getPostById(@PathVariable(value = "id") Integer id) {
         return postService.getPost(id);
     }
 
-    /**
+    */
+/**
      * get Post by author with custom query
      *
      * @param email
      * @return
-     */
+     *//*
+
     @GetMapping("/getPost/{email}")
     public Optional<Post> getPostByEmail(@PathVariable(value = "email") String email) {
         return postService.getPostByAuthor(email);
@@ -91,3 +98,4 @@ public class PostController extends BaseController {
 
 
 }
+*/

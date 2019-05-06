@@ -1,3 +1,4 @@
+/*
 package com.aws.codestar.projecttemplates.util;
 
 import com.aws.codestar.projecttemplates.model.User;
@@ -33,3 +34,4 @@ public class UserUtil {
         return request.getHeader("username");
     }
 }
+*/

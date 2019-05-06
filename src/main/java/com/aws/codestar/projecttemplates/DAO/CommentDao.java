@@ -1,3 +1,4 @@
+/*
 package com.aws.codestar.projecttemplates.DAO;
 
 import com.aws.codestar.projecttemplates.model.Comment;
@@ -13,3 +14,4 @@ public interface CommentDao extends CrudRepository<Comment, Integer> {
     public Long getCommentCountByPostID(Integer postID);
 }
 
+*/

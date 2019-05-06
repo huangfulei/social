@@ -1,3 +1,4 @@
+/*
 package com.aws.codestar.projecttemplates.service;
 
 import com.aws.codestar.projecttemplates.DAO.CommentDao;
@@ -28,3 +29,4 @@ public class CommentService {
         return commentDao.getCommentCountByPostID(postID);
     }
 }
+*/
