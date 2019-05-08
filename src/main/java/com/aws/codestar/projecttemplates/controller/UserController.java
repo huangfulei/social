@@ -28,25 +28,6 @@ public class UserController extends BaseController{
         return userService.getUserByEmail(email);
     }
 
-    @GetMapping("test")
-    public String test(){
-        return "Test";
-    }
-
-    @GetMapping("/test1")
-    public String test1(){
-        return "test1";
-    }
-    @RequestMapping("test2")
-    public String test2(){
-        return "Test2";
-    }
-
-    @RequestMapping("/test3")
-    public String test3(){
-        return "test3";
-    }
-
     @PostMapping("/saveNewUser")
     public User signUpUser(@RequestBody User user) {
 
