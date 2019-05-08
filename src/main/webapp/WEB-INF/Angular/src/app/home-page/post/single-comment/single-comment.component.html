@@ -1,0 +1,22 @@
+<mat-divider></mat-divider>
+<div class="userComment">
+  <mat-card-header>
+    <div mat-card-avatar class="header-image"></div>
+    <mat-card-title>{{comment.name}}</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+    <!--<img src="../../../assets/images/headImage.jpg" alt="Photo of Fulei" width="100px" height="100px">-->
+  </mat-card-header>
+  <mat-card-content style="margin: 0px;" (click)="getPostDetail()">
+    {{comment.content}}
+  </mat-card-content>
+
+  <!--card action-->
+  <mat-card-actions style="padding: 0px;">
+    <button mat-button (click)="onLikeClick()"><i class="fa fa-thumbs-up"></i> LIKE</button>
+    <button mat-button (click)="onCommentClick()"><i class="fa fa-comment"></i> REPLY</button>
+    <!--<button mat-button (click)="collapsed=true">...</button>-->
+    <!--<button mat-button (click)="collapsed=false">...</button>-->
+  </mat-card-actions>
+</div>
+
+<mat-divider></mat-divider>

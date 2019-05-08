@@ -1,0 +1,14 @@
+.container > * {
+  width: 100%;
+}
+
+.container form > * {
+  margin: 10px 0;
+}
+
+.container .mat-radio-button {
+  margin: 0 5px;
+}
+h1{
+  margin: 0px;
+}

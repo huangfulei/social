@@ -1,0 +1,44 @@
+<!-- Navigation -->
+<div>
+  <mat-toolbar>
+    <button mat-button routerLink="/home">
+      <mat-icon>home</mat-icon>
+      {{title}}
+    </button>
+    <span class="fill-remaining-space"></span>
+
+    <div fxlayout="row" fxshow="false" fxshow.gt-sm>
+      <button *ngIf="isLoggedIn" mat-raised-button
+              [disabled]="postWindowOpened"
+              (click)="openPostWindow()">QuickPost</button>
+      <button mat-button
+              routerLink="/user/login"
+              *ngIf="!isLoggedIn">log in
+      </button>
+      <button mat-button
+              routerLink="/user/sign_up"
+              *ngIf="!isLoggedIn">sign up
+      </button>
+      <button mat-button
+              *ngIf="isLoggedIn"
+              (click)="onLogOut()">Log Out
+      </button>
+    </div>
+    <button class="user-image-button" *ngIf="isLoggedIn" [matMenuTriggerFor]="menu" fxHide.gt-sm="false" fxShow="true">
+    </button>
+  </mat-toolbar>
+  <mat-menu #menu="matMenu">
+    <div *ngIf="!isLoggedIn">
+      <button mat-menu-item routerLink="/user/login">log in</button>
+      <button mat-menu-item routerLink="/user/sign_up">sign up</button>
+    </div>
+    <div *ngIf="isLoggedIn">
+      <button mat-menu-item routerLink="/user">My Account</button>
+      <button mat-menu-item routerLink="/user/posts">My Posts</button>
+      <button mat-menu-item routerLink="/user/tutorial">My Tutorial</button>
+      <button mat-menu-item routerLink="/user/saved">Saved</button>
+    </div>
+
+  </mat-menu>
+</div>
+

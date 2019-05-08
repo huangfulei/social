@@ -1,0 +1,53 @@
+<app-slides></app-slides>
+<div style="min-height: 800px;">
+
+
+  <!--todo: lazy load or async load-->
+
+  <mat-tab-group>
+    <mat-tab label="Recommended">
+      <ng-template matTabContent>
+        <div *ngFor="let post of posts">
+          <app-post [post]="post" [user]="user"></app-post>
+        </div>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Followed">
+      <ng-template matTabContent>
+        <div *ngFor="let post of posts">
+          <app-post [post]="post" [user]="user"></app-post>
+        </div>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+  <!--route asynchronously, need to pass params in to the route link-->
+  <!--<nav mat-tab-nav-bar>
+    <a mat-tab mat-tab-link
+       *ngFor="let link of navLinks"
+       [routerLink]="link.path"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive">
+      {{link.label}}
+    </a>
+  </nav>
+
+  <router-outlet></router-outlet>-->
+
+  <!--pagination -->
+  <mat-paginator [length]="length"
+                 [pageSize]="pageSize"
+                 [pageSizeOptions]="pageSizeOptions"
+                 [showFirstLastButtons]="true"
+                 (page)="onPageChange($event)">
+  </mat-paginator>
+
+
+  <!--<div class="flex-container">-->
+  <!--<div class="flex-item">item1</div>-->
+  <!--<div class="flex-item">item2</div>-->
+  <!--<div class="flex-item">item3</div>-->
+  <!--<div class="flex-item">item4</div>-->
+  <!--</div>-->
+  <!--<button mat-button>Click me!</button>-->
+
+</div>

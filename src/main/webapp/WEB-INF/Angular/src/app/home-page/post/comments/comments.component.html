@@ -1,0 +1,32 @@
+<div class="comments">
+  <!--<div *ngIf="comments != null">-->
+  <div *ngFor="let comment of comments">
+    <app-single-comment [comment]=comment></app-single-comment>
+  </div>
+  <!-- </div>-->
+
+  <mat-paginator
+    [length]="length | async"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+    [showFirstLastButtons]='true'
+    (page)="onPageChange($event)">
+  </mat-paginator>
+
+  <div class="submitComment">
+    <mat-form-field class="full-width">
+      <textarea matInput
+                placeholder="Leave a comment"
+                #userComment
+                required></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button
+            color="primary"
+            [disabled]="!userComment.value"
+            (click)="addComment(userComment)">Submit
+    </button>
+  </div>
+
+</div>
+

@@ -1,0 +1,36 @@
+<form class="container" [formGroup]="postForm">
+  <div class="container">
+    <h1 mat-dialog-title>Master {{dialogData.userName}}</h1>
+
+    <!--formcontrol need to be added-->
+    <mat-radio-group>
+      <mat-radio-button value="1">Share Knowledge</mat-radio-button>
+      <mat-radio-button value="2">Seek Help</mat-radio-button>
+      <mat-radio-button value="3">Other</mat-radio-button>
+    </mat-radio-group>
+
+
+    <mat-form-field>
+      <input matInput placeholder="Title" formControlName="title" cdkFocusInitial required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput
+                [cdkAutosizeMaxRows]="12"
+                [cdkAutosizeMinRows]="12"
+                placeholder="Write content here"
+                required
+                cdkTextareaAutosize
+                formControlName="content"></textarea>
+    </mat-form-field>
+
+    <div mat-dialog-actions>
+      <button mat-button (click)="onCancelClick()">Cancel</button>
+      <button mat-button type="submit"
+              [disabled]="!postForm.valid"
+              (click)="onSubmit()">Post
+      </button>
+    </div>
+  </div>
+
+</form>

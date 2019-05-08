@@ -1,0 +1,128 @@
+<div class="container">
+  <mat-card class="card">
+    <div class="head">
+      <img class="head-image" mat-card-lg-image alt="Photo of Fulei">
+      <mat-card-header>
+        <mat-card-title>{{user.name}}</mat-card-title>
+        <mat-card-subtitle>{{user.tags}}</mat-card-subtitle>
+      </mat-card-header>
+    </div>
+
+    <mat-card-content>
+      <form class="userProfileForm" [formGroup]="userProfileForm" (ngSubmit)="onSubmit()">
+
+        <div class="Field">
+          <mat-panel-title class="Field-label">
+            About Me
+          </mat-panel-title>
+          <mat-panel-description class="Field-detail container">
+            <div *ngIf="!editStatus['bio']">
+              {{user.bio}}
+            </div>
+            <mat-form-field class="bio" *ngIf="editStatus['bio']">
+              <textarea matInput
+                        cdkTextareaAutosize
+                        placeholder="Introduce Yourself"
+                        [value]="user.bio"
+                        formControlName="bio">
+              </textarea>
+            </mat-form-field>
+            <mat-slide-toggle class="toggle"
+                              (click)="enableEdit('bio', buttonAction)">{{buttonAction.bio}}</mat-slide-toggle>
+          </mat-panel-description>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div class="Field">
+          <mat-panel-title class="Field-label">
+            Gender
+          </mat-panel-title>
+          <mat-panel-description class="Field-detail container">
+            <div *ngIf="!editStatus['gender']; else elseBlock">
+              {{user.gender}}
+            </div>
+            <ng-template #elseBlock>
+              <mat-radio-group formControlName="gender">
+                <mat-radio-button *ngFor="let gender of genderChoices"
+                                  [value]=gender>{{gender}}</mat-radio-button>
+              </mat-radio-group>
+            </ng-template>
+            <mat-slide-toggle class="toggle"
+                              (click)="enableEdit('gender', buttonAction)">{{buttonAction.gender}}</mat-slide-toggle>
+          </mat-panel-description>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div class="Field">
+          <mat-panel-title class="Field-label">
+            Location
+          </mat-panel-title>
+          <mat-panel-description class="Field-detail container">
+            <div *ngIf="!editStatus['location']">
+              {{user.location}}
+            </div>
+            <mat-form-field *ngIf="editStatus['location']">
+              <input matInput
+                     placeholder="City Country"
+                     [value]="user.location"
+                     formControlName="location">
+            </mat-form-field>
+            <mat-slide-toggle class="toggle"
+                              (click)="enableEdit('location', buttonAction)">{{buttonAction.location}}</mat-slide-toggle>
+          </mat-panel-description>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div class="Field">
+          <mat-panel-title class="Field-label">
+            Work
+          </mat-panel-title>
+          <mat-panel-description class="Field-detail container">
+            <div *ngIf="!editStatus['work']">
+              {{user.work}}
+            </div>
+            <mat-form-field *ngIf="editStatus['work']">
+              <input matInput
+                     placeholder="Title in Company"
+                     [value]="user.work"
+                     formControlName="work">
+            </mat-form-field>
+            <mat-slide-toggle class="toggle"
+                              (click)="enableEdit('work', buttonAction)">{{buttonAction.work}}</mat-slide-toggle>
+          </mat-panel-description>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div class="Field">
+          <mat-panel-title class="Field-label">
+            School
+          </mat-panel-title>
+          <mat-panel-description class="Field-detail container">
+            <div *ngIf="!editStatus['school']">
+              {{user.school}}
+            </div>
+            <mat-form-field *ngIf="editStatus['school']">
+              <input matInput
+                     placeholder="Graduated From"
+                     [value]="user.school"
+                     formControlName="school">
+            </mat-form-field>
+            <mat-slide-toggle class="toggle"
+                              (click)="enableEdit('school', buttonAction)">{{buttonAction.school}}</mat-slide-toggle>
+          </mat-panel-description>
+        </div>
+
+      </form>
+    </mat-card-content>
+
+    <!--    <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>-->
+  </mat-card>
+</div>
+

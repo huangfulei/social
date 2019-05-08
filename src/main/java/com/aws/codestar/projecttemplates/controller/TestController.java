@@ -7,13 +7,13 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class TestController {
 
-    @RequestMapping("/user")
+    /*@RequestMapping("/user")
     public String getUsers(){
 
         String endpoint = System.getProperty("API_ENDPOINT");
         System.out.println("endpoint is: "+endpoint);
-        return "this is fulei";
-    }
+        return "this is fulei and i'm going to deploy angular the next step";
+    }*/
 
     @RequestMapping("testPage")
     public ModelAndView test(){

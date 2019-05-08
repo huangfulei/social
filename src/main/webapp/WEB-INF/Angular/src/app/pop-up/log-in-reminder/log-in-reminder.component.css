@@ -1,0 +1,9 @@
+.buttons{
+  display: flex;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+h3{
+  text-align: center;
+}

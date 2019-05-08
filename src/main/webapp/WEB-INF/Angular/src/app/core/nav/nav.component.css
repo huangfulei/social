@@ -1,0 +1,13 @@
+.fill-remaining-space{
+  flex: 1 1 auto;
+}
+
+.user-image-button{
+
+  width: 35px;
+  height: 35px;
+  background-image: url("../../../assets/images/headImage.jpg");
+  background-size: cover;
+  border-radius: 50%;
+
+}

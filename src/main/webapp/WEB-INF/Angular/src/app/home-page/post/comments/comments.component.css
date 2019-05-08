@@ -1,0 +1,18 @@
+.comments {
+  padding-left: 2em;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.submitComment {
+  display: flex;
+
+}
+
+button {
+  height: 40px;
+  align-self: center;
+  padding: 0;
+}

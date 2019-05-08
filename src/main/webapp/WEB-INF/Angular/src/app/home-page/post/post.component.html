@@ -1,0 +1,45 @@
+<mat-card class="post-card">
+  <mat-card-header class="header">
+
+      <div mat-card-avatar class="header-image"></div>
+      <div class="postUser">
+        <mat-card-title>{{post.author}}</mat-card-title>
+        <mat-card-subtitle>{{post.tags }}</mat-card-subtitle>
+      </div>
+      <!--<img src="../../../assets/images/headImage.jpg" alt="Photo of Fulei" width="100px" height="100px">-->
+
+      <h3 class="postTitle" (click)="getPostDetail()"> {{post.title}}</h3>
+      <div class="postTime">
+        {{post.dateTime}}
+      </div>
+  </mat-card-header>
+
+  <mat-card-content style="margin: 0px;" (click)="getPostDetail()">
+    {{displayContent}}
+    <button mat-button style="padding: 0px; color: lightskyblue;" (click)="readMore();"
+            *ngIf="!expended&&displayContent?.length>140">Read More <i class="fa fa-caret-down"></i></button>
+
+    <mat-spinner [style.display]="showSpinner? 'block' : 'none'"></mat-spinner>
+
+  </mat-card-content>
+
+  <!--card action-->
+  <mat-card-actions style="padding: 0px;">
+    <button mat-button [color]="likeStatus"  (click)="onLikeClick()"><i class="fa fa-caret-up"></i> {{like}} {{post.numberOfLikes}}</button>
+    <button mat-button [color]="dislikeStatus" (click)="onDislikeClick()" style="min-width: 0px; padding: 5px; margin: 0px;"><i
+      class="fa fa-caret-down"></i></button>
+    <button mat-button (click)="onCommentClick()">
+      <i class="fa fa-comment"></i> {{totalNumberOfComments | async}} {{comment}}</button>
+    <button mat-button (click)="onShareClick()"><i class="fa fa-share"></i> SHARE</button>
+    <button mat-button [color]="saveStatus" (click)="onSaveClick()"><i class="fa fa-star"></i> {{save}}</button>
+    <button mat-button style="padding: 0px; color: lightskyblue;" (click)="readMore()" *ngIf="expended">Read less <i
+      class="fa fa-caret-up"></i></button>
+    <!--<button mat-button (click)="collapsed=true">...</button>-->
+    <!--<button mat-button (click)="collapsed=false">...</button>-->
+  </mat-card-actions>
+
+  <div *ngIf="!commentCollapsed">
+    <app-comments [postID]="post.id"></app-comments>
+  </div>
+</mat-card>
+

@@ -1,0 +1,9 @@
+.header-image{
+  background-image: url('../../../../assets/images/headImage.jpg');
+  background-size: cover;
+
+}
+
+.userComment{
+  padding-top: 10px;
+}

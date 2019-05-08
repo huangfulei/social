@@ -1,0 +1,91 @@
+<form class="container" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <div class="container">
+    <h1>Sign up</h1>
+
+    <div *ngIf="userInfo.statusCode==1" class="alert alert-danger">
+      {{userInfo.statusMsg}}
+    </div>
+    <div *ngIf="userInfo.statusCode==2" class="alert alert-danger">
+      {{userInfo.statusMsg}}
+    </div>
+
+    <mat-form-field>
+      <input matInput
+             [ngClass]="userInfo.statusCode == 1? 'is-invalid': ''"
+             id="name-field"
+             type="text"
+             class="form-control"
+             placeholder="user name"
+             formControlName="username"
+             required/>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+             [ngClass]="userInfo.statusCode == 2? 'is-invalid': ''"
+             id="email-field"
+             type="text"
+             class="form-control"
+             placeholder="email"
+             formControlName="email"
+             required/>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="password"
+             class="form-control"
+             placeholder="password"
+             formControlName="password"
+             required/>
+    </mat-form-field>
+    <div *ngIf="password.invalid && (password.dirty || password.touched)"
+         class="alert alert-danger">
+
+      <div *ngIf="password.errors.required">
+        Password is required.
+      </div>
+      <div *ngIf="password.errors.minlength">
+        Password must be at least 6 characters long.
+      </div>
+      <div *ngIf="password.errors.noUppercase">
+        Password must contain at least 1 uppercase letter.
+      </div>
+      <div *ngIf="password.errors.boLowercase">
+        Password must contain at least 1 lowercase letter.
+      </div>
+      <div *ngIf="password.errors.noNumber">
+        Password must contain at least 1 number.
+      </div>
+      <div *ngIf="password.errors.noSpecialChar">
+        Password must contain at least 1 special character.
+      </div>
+    </div>
+
+    <mat-form-field>
+      <input matInput type="password"
+             class="form-control"
+             placeholder="confirm password"
+             formControlName="confirmPass"
+             required/>
+    </mat-form-field>
+
+    <div *ngIf="confirmPass.invalid && (confirmPass.dirty || confirmPass.touched)"
+         class="alert alert-danger">
+
+      <div *ngIf="confirmPass.errors.required">
+        Confirm password is required.
+      </div>
+      <div *ngIf="confirmPass.errors.notMatch">
+        Password need to be the same.
+      </div>
+    </div>
+
+    <div>
+      <button type="submit" (click)="openSnackBar('sign up successful', null)" [disabled]="signupForm.invalid"
+              class="btn btn-primary">
+        Sign up
+      </button>
+      <a routerLink="/user/login" class="btn btn-link">Log in</a>
+    </div>
+  </div>
+</form>

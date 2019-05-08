@@ -1,0 +1,29 @@
+.post-card{
+   /*max-width: 800px;*/
+  margin: 2em;
+  /*background-color: ;*/
+}
+
+.header-image{
+  background-image: url('../../../assets/images/headImage.jpg');
+  background-size: cover;
+
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.postTitle{
+  width: 50%;
+}
+
+.postTime{
+  width: 20%;
+}
+
+.postUser{
+  width: 20%;
+}
+
