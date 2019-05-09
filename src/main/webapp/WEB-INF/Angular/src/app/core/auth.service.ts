@@ -17,7 +17,7 @@ const httpOptions = {
 })
 export class AuthService {
 
-  private authUserDetailUrl = '/server/authUser';
+  private authUserDetailUrl = '/authUser';
 
 
   authUserDetail(user: IUser): Observable<IUser> {

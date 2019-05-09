@@ -6,11 +6,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -25,15 +27,15 @@ public class PostService {
 
         LOGGER.info("first item number is: " + firstItemNumber);
         LOGGER.info("page size is: " + pageSize);
-        Iterable<Post> posts = postDao.findRecommendedPosts(firstItemNumber, pageSize);
+        List<Post> posts = postDao.findRecommendedPosts(PageRequest.of(firstItemNumber, pageSize));
         for (Post post : posts) {
             String date = post.getDateTime().substring(0, 10);
-            String time = post.getDateTime().substring(11);
+            String time = post.getDateTime().substring(11,19);
             LocalDate localDate = LocalDate.parse(date);
 
             if (!localDate.equals(LocalDate.now()) && localDate.getYear() == LocalDate.now().getYear()) {
                 // if the post is posted this year, only display month and date
-                post.setDateTime(post.getDateTime().substring(5));
+                post.setDateTime(post.getDateTime().substring(5,19));
             } else {
                 post.setDateTime(time);
             }
@@ -55,8 +57,10 @@ public class PostService {
         return postDao.findByAuthor(author);
     }
 
-    public Iterable<Post> getLatestPosts(Integer time, PageRequest post) {
-        return postDao.findByTime(time, post);
+    public Iterable<Post> getLatestPosts(Integer time, PageRequest pageRequest) {
+
+
+        return postDao.findByDateTime(pageRequest);
     }
 
     public Long getTotalNumberOfPosts() {

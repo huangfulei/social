@@ -35,7 +35,7 @@ public class Post {
     @Column(name = "NUMBER_OF_VIEWS")
     private Integer numberOfViews;
 
-    @Column(name = "DATE_TIME")
+    @Column(name = "DATETIME")
     private String dateTime;
 
     public String getDateTime() {

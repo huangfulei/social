@@ -18,11 +18,11 @@ export class PostDataService {
 
   posts: IPost[] = [];
 
-  private postPostUrl = '/server/postPost';
-  private getAllPostsUrl = '/server/getRecommendedPosts/';
-  private getTotalNumberOfPostsUrl = '/server/getTotalNumberOfPosts';
-  private updateTotalNumberOfLikesUrl = '/server/updateTotalNumberOfLikes/';
-  private getSavedPost = '/server/getSavedPost/';
+  private postPostUrl = '/postPost';
+  private getAllPostsUrl = '/getRecommendedPosts/';
+  private getTotalNumberOfPostsUrl = '/getTotalNumberOfPosts';
+  private updateTotalNumberOfLikesUrl = '/updateTotalNumberOfLikes/';
+  private getSavedPost = '/getSavedPost/';
 
   // private newPostSubject$ = new BehaviorSubject<IPost[]>(this.posts);
   private newTotalNumberOfPosts$ = new Subject<number>();

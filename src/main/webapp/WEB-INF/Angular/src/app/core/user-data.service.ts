@@ -15,8 +15,8 @@ export class UserDataService implements OnDestroy {
 
   subs = new SubSink();
   private saveNewUserUrl = '/saveNewUser';
-  private getUserUrl = '/server/getUser';
-  private updateUserUrl = '/server/updateUser';
+  private getUserUrl = '/getUser';
+  private updateUserUrl = '/updateUser';
 
 
   saveNewUser(newUser: IUser): Observable<IUser> {

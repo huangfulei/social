@@ -17,7 +17,7 @@
   <mat-card-content style="margin: 0px;" (click)="getPostDetail()">
     {{displayContent}}
     <button mat-button style="padding: 0px; color: lightskyblue;" (click)="readMore();"
-            *ngIf="!expended&&displayContent?.length>140">Read More <i class="fa fa-caret-down"></i></button>
+            *ngIf="!expended&&post.content.length>140">Read More <i class="fa fa-caret-down"></i></button>
 
     <mat-spinner [style.display]="showSpinner? 'block' : 'none'"></mat-spinner>
 
@@ -32,8 +32,7 @@
       <i class="fa fa-comment"></i> {{totalNumberOfComments | async}} {{comment}}</button>
     <button mat-button (click)="onShareClick()"><i class="fa fa-share"></i> SHARE</button>
     <button mat-button [color]="saveStatus" (click)="onSaveClick()"><i class="fa fa-star"></i> {{save}}</button>
-    <button mat-button style="padding: 0px; color: lightskyblue;" (click)="readMore()" *ngIf="expended">Read less <i
-      class="fa fa-caret-up"></i></button>
+    <button mat-button style="padding: 0px; color: lightskyblue;" (click)="readMore()" *ngIf="expended">Read less <i class="fa fa-caret-up"></i></button>
     <!--<button mat-button (click)="collapsed=true">...</button>-->
     <!--<button mat-button (click)="collapsed=false">...</button>-->
   </mat-card-actions>

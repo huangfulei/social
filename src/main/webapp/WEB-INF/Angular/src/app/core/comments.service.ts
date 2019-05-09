@@ -13,9 +13,9 @@ const httpOptions = {
 })
 export class CommentsService {
 
-  private saveCommentUrl = '/server/saveComment';
-  private getCommentsUrl = '/server/getComments/';
-  private getTotalCountOfCommentsUrl = '/server/getTotalCountOfComments/';
+  private saveCommentUrl = '/saveComment';
+  private getCommentsUrl = '/getComments/';
+  private getTotalCountOfCommentsUrl = '/getTotalCountOfComments/';
 
   private commentSubject$ = new Subject<IComment[]>();
   commentsDetail$ = this.commentSubject$.asObservable();
