@@ -24,12 +24,6 @@ public class TestController {
         return mav;
     }
 
-    @RequestMapping("index")
-    public ModelAndView getIndexPage(){
-        ModelAndView mav = new ModelAndView("index");
-        return mav;
-    }
-
     @RequestMapping("/home")
     public RedirectView showHomePage(){
         return new RedirectView("/");
