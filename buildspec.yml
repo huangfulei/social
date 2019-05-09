@@ -9,7 +9,7 @@ phases:
       - mvn clean compile test
   build:
     commands:
-      - mvn package
+      - mvn war:exploded
   post_build:
     commands:
       - cp -r .ebextensions/ target/ROOT/

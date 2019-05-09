@@ -2,10 +2,11 @@ package com.aws.codestar.projecttemplates.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
-@Controller
+@RestController
 public class TestController {
 
     /*@RequestMapping("/user")
@@ -15,6 +16,11 @@ public class TestController {
         System.out.println("endpoint is: "+endpoint);
         return "this is fulei and i'm going to deploy angular the next step";
     }*/
+
+    @RequestMapping("test")
+    public String test1(){
+        return "this is a test";
+    }
 
     @RequestMapping("testPage")
     public ModelAndView test(){
