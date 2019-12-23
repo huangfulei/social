@@ -7,8 +7,9 @@ import {CoreModule} from './core/core.module';
 import {FooterComponent} from './footer/footer.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MAT_LABEL_GLOBAL_OPTIONS} from '@angular/material';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {TokenInterceptor} from "./shared/tokenInterceptor";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
   providers: [
     // global setting for float label
     {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: {float: 'auto'}},
-
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true},
   ],
   bootstrap: [AppComponent]
 })
